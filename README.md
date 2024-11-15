@@ -4,7 +4,7 @@
 
   <br />
   
-  ## BOOK STORE FRONTEND
+  ## BOOK STORE FRONTEND 😊
   
   <br/>
   This is a bookstore web application built using the MERN stack (MongoDB, Express.js, Vite.js, Node.js). The project allows users to browse, upload, and manage books in an interactive, user-friendly interface. The application features an intuitive UI with responsive design, enabling a smooth experience across devices.
@@ -13,7 +13,7 @@
   <a href="https://bookstores-app.netlify.app/"><strong>➥ Live Demo</strong></a>
 <br/>
 
-## File Structure
+## File Structure 😊
 
 ```python
  bookstore/
@@ -50,7 +50,7 @@
 └── yarn.lock / package-lock.json # Lock file
 
 ```
-## Install
+## Install😊
 
 <br/>
 ➥npm create vite@latest bookstore --template react <br/>
