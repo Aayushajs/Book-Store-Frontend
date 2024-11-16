@@ -38,7 +38,7 @@ function Navbar() {
         <a href="/" className="hover:text-indigo-500 transition">Home</a>
       </li>
       <li>
-        <a href="/course" className="hover:text-indigo-500 transition">Course</a>
+        <a href="/course" className="hover:text-indigo-500 transition">Books</a>
       </li>
       <li>
         <a href="/Contact" className="hover:text-indigo-500 transition">Contact</a>
