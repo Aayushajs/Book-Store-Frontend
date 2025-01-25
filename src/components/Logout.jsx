@@ -10,7 +10,7 @@ function Logout() {
         ...authUser,
         user: null,
       });
-      localStorage.removeItem("Users");
+      localStorage.removeItem("token"); // remove token from local storage
       toast.success("Logout successfully");
 
       setTimeout(() => {

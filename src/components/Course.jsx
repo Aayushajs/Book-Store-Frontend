@@ -27,8 +27,13 @@ function BookList() {
     fetchBooks();
   }, []);
 
-  if (loading) return <p>Loading books...</p>;
-  if (error) return <p>Error: {error}</p>;
+  if (loading)
+   {
+    return <p>Loading books...</p>;
+  }
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-20">

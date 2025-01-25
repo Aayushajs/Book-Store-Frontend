@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import toast from "react-hot-toast";
+
 function Login() {
   const {
     register,
@@ -18,13 +19,18 @@ function Login() {
     await axios
       .post("https://book-store-zan0.onrender.com/user/login", userInfo)
       .then((res) => {
-        console.log(res.data);
-        if (res.data) {
-          toast.success("Loggedin Successfully");
+        if (res.data.token) {
+          // Save the JWT token in localStorage
+          localStorage.setItem("token", res.data.token);
+
+          // Optional: Save user info (if included in the response)
+          localStorage.setItem("user", JSON.stringify(res.data.user));
+
+          toast.success("Logged in Successfully");
           document.getElementById("my_modal_3").close();
+
           setTimeout(() => {
-            window.location.reload();
-            localStorage.setItem("Users", JSON.stringify(res.data.user));
+            window.location.reload(); // Refresh to apply changes if needed
           }, 1000);
         }
       })
@@ -36,12 +42,12 @@ function Login() {
         }
       });
   };
+
   return (
     <div>
       <dialog id="my_modal_3" className="modal">
         <div className="modal-box">
           <form onSubmit={handleSubmit(onSubmit)} method="dialog">
-            {/* if there is a button in form, it will close the modal */}
             <Link
               to="/"
               className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
@@ -68,7 +74,7 @@ function Login() {
                 </span>
               )}
             </div>
-            {/* password */}
+            {/* Password */}
             <div className="mt-4 space-y-2">
               <span>Password</span>
               <br />

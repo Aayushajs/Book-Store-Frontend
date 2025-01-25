@@ -28,8 +28,8 @@ function Signup() {
           toast.success("Signup Successfully");
           navigate(from, { replace: true });
         }
-        localStorage.setItem("Users", JSON.stringify(res.data.user));
-      })
+        localStorage.setItem("token", response.data.token);
+       })
       .catch((err) => {
         if (err.response) {
           console.log(err);
